@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe Finder 🍽️</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="toggle-container">
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+    </div>
+    <div class="main-container animate-in">
+        <header>
+            <h1>Recipe Finder 🍽️</h1>
+            <p>Find recipes based on the ingredients you have</p>
+        </header>
+        <section class="form-section">
+            <form method="POST">
+                <input type="text" name="ingredients" placeholder="Enter ingredients (e.g., tomato, onion, garlic)" required>
+                <button type="submit">Search Recipes</button>
+            </form>
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+        </section>
+        <section class="results">
+            {% if recipes %}
+                <h2>🍲 Found {{ recipes|length }} Recipe(s):</h2>
+                {% for recipe in recipes %}
+                    <div class="recipe-card animate-in">
+                        <pre>{{ recipe }}</pre>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </section>
+    </div>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+
+        window.onload = () => {
+            if (localStorage.getItem("darkMode") === "true") {
+                document.body.classList.add("dark");
+            }
+        };
+    </script>
+</body>
+</html>

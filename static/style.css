@@ -1,0 +1,155 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f7f9;
+    color: #333;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease;
+}
+
+body.dark .main-container {
+    background: #1e1e1e;
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.05);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+body.dark header h1 {
+    color: #90caf9;
+}
+
+header p {
+    color: #555;
+    font-size: 1.1em;
+}
+
+body.dark header p {
+    color: #aaa;
+}
+
+.form-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+body.dark input[type="text"] {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #1e8449;
+    transform: scale(1.05);
+}
+
+.results {
+    margin-top: 20px;
+}
+
+.recipe-card {
+    background: #f0f2f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 5px solid #27ae60;
+    transition: background-color 0.3s ease;
+}
+
+body.dark .recipe-card {
+    background: #2c2c2c;
+    border-left: 5px solid #66bb6a;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+.toggle-container {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 999;
+}
+
+.dark-mode-toggle {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 20px;
+    background-color: #444;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #222;
+}
+
+.animate-in {
+    animation: fadeInUp 0.6s ease both;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
